@@ -88,6 +88,8 @@ const figmaDataController = async (
       await figmaImage.metadata();
 
     const browser = await puppeteer.launch({
+      executablePath:
+        "/opt/render/.cache/puppeteer/chrome/linux-126.0.6478.126/chrome",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
