@@ -87,11 +87,7 @@ const figmaDataController = async (
     const { width: figmaWidth, height: figmaHeight } =
       await figmaImage.metadata();
 
-    const browser = await puppeteer.launch({
-      executablePath:
-        "/opt/render/.cache/puppeteer/chrome/linux-126.0.6478.126/chrome-linux64/chrome",
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
+    const browser = await puppeteer.launch({});
     const page = await browser.newPage();
 
     await page.goto(tabUrl, { waitUntil: "networkidle2" });
