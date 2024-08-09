@@ -90,7 +90,7 @@ const figmaDataController = async (
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    await page.goto(tabUrl, { waitUntil: "networkidle2" });
+    await page.goto(tabUrl, { waitUntil: "networkidle2", timeout: 60000 });
     await page.setViewport({
       width: figmaWidth as number,
       height: figmaHeight as number,
