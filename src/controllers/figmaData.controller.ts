@@ -87,7 +87,7 @@ const figmaDataController = async (
     const { width: figmaWidth, height: figmaHeight } =
       await figmaImage.metadata();
 
-    const browser = await puppeteer.launch({});
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await page.goto(tabUrl, { waitUntil: "networkidle2" });
